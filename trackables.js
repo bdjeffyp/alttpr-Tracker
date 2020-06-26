@@ -182,6 +182,41 @@ keyShops = {
 	8: { world: "DW", xPos: 78.9, yPos: 31.3, active: false, name: "Dark World Potion Shop" },
 }
 
+takeAny = {
+	0: { world: "LW", xPos: 33.5, yPos: 6.60, checked: false, name: "Lumberjack's House" },
+	1: { world: "LW", xPos: 18.5, yPos: 1.50, checked: false, name: "Lost Woods Gamble Game" },
+	2: { world: "LW", xPos: 18.6, yPos: 32.4, checked: false, name: "Kakariko Fortune Teller" },
+	3: { world: "LW", xPos: 5.08, yPos: 46.9, checked: false, name: "Snitch Lady West" },
+	4: { world: "LW", xPos: 20.7, yPos: 48.4, checked: false, name: "Snitch Lady East" },
+	5: { world: "LW", xPos: 20.3, yPos: 53.5, checked: false, name: "Bush Covered House" },
+	6: { world: "LW", xPos: 2.62, yPos: 59.5, checked: false, name: "Bomb Hut" },
+	7: { world: "LW", xPos: 21.3, yPos: 70.1, checked: false, name: "Kakariko Gamble Game" },
+	8: { world: "LW", xPos: 47.2, yPos: 65.3, checked: false, name: "Light Bonk Fairy Cave" },
+	9: { world: "LW", xPos: 27.6, yPos: 89.2, checked: false, name: "Light Desert Fairy Cave" },
+	10: { world: "LW", xPos: 31.2, yPos: 95.8, checked: false, name: "50 Rupee Thief Cave" },
+	11: { world: "LW", xPos: 59.6, yPos: 78.1, checked: false, name: "Light Hype Cave" },
+	12: { world: "LW", xPos: 64.9, yPos: 80.9, checked: false, name: "Lake Hylia Fortune Teller" },
+	13: { world: "LW", xPos: 82.3, yPos: 64.6, checked: false, name: "Lake Hylia Fairy Cave" },
+	14: { world: "LW", xPos: 98.0, yPos: 70.1, checked: false, name: "Long Fairy Cave" },
+	15: { world: "LW", xPos: 92.4, yPos: 77.0, checked: false, name: "Good Bee Cave" },
+	16: { world: "LW", xPos: 90.4, yPos: 79.6, checked: false, name: "20 Rupee Thief Cave" },
+	17: { world: "LW", xPos: 79.5, yPos: 85.3, checked: false, name: "Capacity Upgrade Cave" },
+	18: { world: "LW", xPos: 83.6, yPos: 14.4, checked: false, name: "Hookshot Fairy Cave" },
+	19: { world: "DW", xPos: 18.6, yPos: 32.4, checked: false, name: "Outcasts Fortune Teller" },
+	20: { world: "DW", xPos: 21.3, yPos: 70.1, checked: false, name: "Archery Game" },
+	21: { world: "DW", xPos: 46.2, yPos: 27.5, checked: false, name: "Dark Sanctuary" },
+	22: { world: "DW", xPos: 47.2, yPos: 65.3, checked: false, name: "Dark Bonk Fairy Cave" },
+	23: { world: "DW", xPos: 11.5, yPos: 80.0, checked: false, name: "Mire Fairy Cave" },
+	24: { world: "DW", xPos: 19.9, yPos: 82.5, checked: false, name: "Mire Hint Cave" },
+	25: { world: "DW", xPos: 82.3, yPos: 64.6, checked: false, name: "Dark Hylia Fairy Cave" },
+	26: { world: "DW", xPos: 84.9, yPos: 50.5, checked: false, name: "Palace of Darkness Hint Hut" },
+	27: { world: "DW", xPos: 98.0, yPos: 70.1, checked: false, name: "Dark Eastern Hint Cave" },
+	28: { world: "DW", xPos: 89.3, yPos: 77.2, checked: false, name: "Dark Hylia Ledge Fairy Cave" },
+	29: { world: "DW", xPos: 91.5, yPos: 77.2, checked: false, name: "Dark Hylia Ledge Spike Cave" },
+	30: { world: "DW", xPos: 90.5, yPos: 79.1, checked: false, name: "Dark Hylia Ledge Hint Cave" },
+	31: { world: "DW", xPos: 40.6, yPos: 19.1, checked: false, name: "Dark Death Mountain Fairy Cave" },
+}
+
 
 
 map = {
@@ -204,8 +239,12 @@ map = {
 		$("#dungeon10").css({ 'background-image': 'none' }).html("GT");	//replaces prize icons with text for these dungeons
 		$("#dungeon11").css({ 'background-image': 'none' }).html("AGA");
 
+		// Retro only icons: shops and take any caves
 		$.each(keyShops, function (id, shop) {		//places all the shops onto the map (only matters in Retro mode)
 			$("#map" + shop.world).append("<div class=keyShop onclick=toggle.keyShop(" + id + ") id=keyShop" + id + " style=left:" + shop.xPos + "%;top:" + shop.yPos + "%;z-index:" + (1000 - id) + ">F<div class=keyCirc></div></div>");
+		});
+		$.each(takeAny, function (id, cave) {
+			$("#map" + cave.world).append("<div class=takeAny onClick=toggle.takeAny(" + id + ") id=takeAny" + id + " style=left:" + cave.xPos + "%;top:" + cave.yPos + "%;z-index:" + (1000 - id) + "></div>");
 		});
 
 		map.placeMiniChests();	 //places the proper amount of pips for each dungeon's chests, depending on mode
@@ -218,7 +257,7 @@ map = {
 		});
 
 
-		$(".chest, .keyShop").hover(function () {	//Writes chest names to the caption when hovering
+		$(".chest, .keyShop, .takeAny").hover(function () {	//Writes chest names to the caption when hovering
 
 			var states = ["UNAVAILABLE","AVAILABLE","DARK","POSSIBLE","CHECKABLE"];
 			id = (this.id.replace(/\D/g, ''));
@@ -227,6 +266,9 @@ map = {
 			} else if (this.id.indexOf("keyShop") >= 0) {
 				var state = logic.keyShops[id]();
 				$("#caption").html(keyShops[id].name+" &nbsp;<span class='captionState"+state+"'>"+states[state]+"</span>");
+			} else if (this.id.indexOf("takeAny") >= 0) {
+				var state = logic.takeAny[id]();
+				$("#caption").html(takeAny[id].name + " &nbsp;<span class='captionState" + state + "'>" + states[state] + "</span>");
 			} else {
 				var state = logic.chests[id]();
 				$("#caption").html(chests[id].name+" &nbsp;<span class='captionState"+state+"'>"+states[state]+"</span>");
@@ -311,6 +353,10 @@ toggle = {
 	keyShop: function (id) {								//toggles whether a shop is marked as having a key
 		keyShops[id].active = !keyShops[id].active;
 		$("#keyShop" + id).toggleClass("active", keyShops[id].active);
+		logic.apply();
+	},
+	takeAny: function (id) {
+		takeAny[id].checked = !takeAny[id].checked;
 		logic.apply();
 	},
 	icon: function (icon, reverse = false) {			//toggles icons on the tracker

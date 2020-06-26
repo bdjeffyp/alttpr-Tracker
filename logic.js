@@ -1396,6 +1396,49 @@ logic = {
 
         return found;
     },
+    takeAny: {
+        0: function () { return 1 },    // Lumberjack's house
+        1: function () { return 1 },    // Lost Woods Gamble Game
+        2: function () { return 1 },    // Kakariko Fortune Teller
+        3: function () { return 1 },    // Snitch Lady West
+        4: function () { return 1 },    // Snitch Lady East
+        5: function () { return 1 },    // Bush Covered House
+        6: function () { return 1 },    // Bomb Hut
+        7: function () { return 1 },    // Kakariko Gamble Game
+        8: function () { return items.boots.val },    // Light Bonk Fairy Cave
+        9: function () { return 1 },    // Light Desert Fairy Cave
+        10: function () { return items.glove.val > 0 ? 1 : 0 },   // 50 Rupee Thief Cave
+        11: function () { return 1 },   // Light Hype Cave
+        12: function () { return 1 },   // Lake Hylia Fortune Teller
+        13: function () { return 1 },   // Lake Hylia Fairy Cave
+        14: function () { return 1 },   // Long Fairy Cave
+        15: function () { return 1 },   // Good Bee Cave
+        16: function () { return items.glove.val > 0 ? 1 : 0 },   // 20 Rupee Thief Cave
+        17: function () { return items.flippers.val },   // Capacity Upgrade Cave
+        18: function () { return logic.eastDM() ? logic.DMlight() ? 1 : 2 : 0 },   // Hookshot Fairy Cave
+        19: function () { return logic.darkWorldNW() ? 1 : 0 },   // Outcasts Fortune Teller
+        20: function () { return logic.darkWorldSouth() ? 1 : 0 },   // Archery Game
+        21: function () { return logic.darkWorldNW() ? 1 : 0 },   // Dark Sanctuary
+        22: function () { return logic.darkWorldSouth() && items.boots.val ? 1 : 0 },   // Dark Bonk Fairy Cave
+        23: function () { return items.pearl.val && items.flute.val && items.glove.val >= 2 ? 1 : 0 },   // Mire Fairy Cave
+        24: function () { return items.pearl.val && items.flute.val && items.glove.val >= 2 ? 1 : 0 },   // Mire Hint Cave
+        25: function () { return logic.darkWorldEast() ? 1 : 0 },   // Dark Hylia Fairy Cave
+        26: function () { return logic.darkWorldEast() ? 1 : 0 },   // Palace of Darkness Hint Hut
+        27: function () { return logic.darkWorldEast() ? 1 : 0 },   // Dark Eastern Hint Cave
+        28: function () { return logic.darkWorldEast() && items.flippers.val ? 1 : 0 },   // Dark Hylia Ledge Fairy Cave
+        29: function () { return logic.darkWorldEast() && items.flippers.val ? 1 : 0 },   // Dark Hylia Ledge Spike Cave
+        30: function () { return logic.darkWorldEast() && items.flippers.val && items.glove.val > 0 ? 1 : 0 },   // Dark Hylia Ledge Hint Cave
+        31: function () { return logic.climbDM() ? 1 : 0 },   // Dark Death Mountain Fairy Cave
+    },
+    takeAnyCheck: function () {
+        $.each(logic.takeAny, function (id, test) {
+
+            status = takeAny[id].checked ? null : test(); //if the chest's not open, it is tested
+            chests[id].checked = status;                 //sets chest's status according to what the test found
+
+            logic.colour("#takeAny" + id, status);         //colours the chest on the map
+        });
+    },
     //function for colouring map elements by their logical state
     colour: function (elem, state) {
 
@@ -1415,7 +1458,10 @@ logic = {
 
         stats.clear();
         logic.setPrizes();
-        if (settings.keyMode == 2) { logic.keyShopCheck(); }
+        if (settings.keyMode == 2) {
+            logic.keyShopCheck();
+            logic.takeAnyCheck();
+        }
 
         $.each(logic.chests, function (id, test) {
 

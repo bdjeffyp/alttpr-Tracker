@@ -442,6 +442,31 @@ body {
     border-color:#fff;
 }
 
+.takeAny {
+	width: 16px;
+	height: 16px;
+	margin-left: -8px;
+	margin-top: -8px;
+	position: absolute;
+	background-size: 100% 100%;
+	cursor:pointer;
+	border-radius:50%;
+    border: solid 2px #000;
+    background-color:#7f7f7f;
+
+    color:#000;
+ 	text-align:center;	
+	font-family:Oswald,Sans-Serif;
+	font-weight: 600;
+	font-size:19px;
+	padding:1px 0px 0px 0px;
+    line-height:23px;
+}
+
+.takeAny:hover {
+    border-color:#fff;
+}
+
 .unavail { background-color: #cb0b26; }
 .avail { background-color: #0cd46f; }
 .dark { background-color: #006999; }
