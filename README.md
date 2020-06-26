@@ -1,4 +1,8 @@
-Hi I made a tracker for playing this video game. It's kind of in beta, but it's mostly working, I think! Try it out!
+# A Link to the Past Randomizer Tracker
+Found online at [https://bdjeffyp.github.io/alttpr-tracker](https://bdjeffyp.github.io/alttpr-tracker)
+This tracker is forked off from ItsSupercar's tracker. I noticed that it didn't include locations for the Take Any caves on the map when Retro mode is enabled. My fork adds these locations as well as the logic for when they should be accessible.
+Since ItsSupercar has not been active on the ALttPR Discord lately, I decided to build on their work and continue this great tracker! If you find any issues with the tracker, please let me know on the Discord!
+Everything below is from the original project's README...
 
 ## INSTALLATION
 
