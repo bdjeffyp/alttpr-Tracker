@@ -25,7 +25,7 @@ This is a browser-based tracker. You can simply open index.html directly to begi
 (Unknown -> Bombos -> Ether -> Quake)
 - To mark a dungeon as completed, click the boss head icon or the large icon on the map.
 
-**TIP:** For icons that count up/down, or cycle through multiple states (like the bow, keys, and dungeon chests), you can right click to cycle backwards-- helpful if you need to undo a misclick!
+**TIP:** For icons that count up/down, or cycle through multiple states (like the bow, keys, and dungeon chests), you can right click to cycle backwards-- helpful if you need to undo a mistake!
 
 ###### COLOUR LEGEND
 
@@ -40,7 +40,7 @@ Icons on the map are displayed in various colours. Here's what they mean:
 
 - The colour of the large circle tells you whether the boss is beatable, unbeatable, uncertain, or requires traversal of dark rooms (same as legend above).
 - The colour of the numbered circle tells you whether the next item in the dungeon is available, unavailable, or uncertain. The number indicates how many items total are left in the dungeon.
-- The colour and number of the small dots represents ALL the remaining items and the state of their availabiliity.
+- The colour and number of the small dots represents ALL the remaining items and the state of their availability.
 
 
 ## MODE-SPECIFIC INSTRUCTIONS
