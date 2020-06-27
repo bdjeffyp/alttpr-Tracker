@@ -80,6 +80,7 @@ body {
   margin:8px 8px;
 }
 
+/* Items: row 1 */
 #bow {left:0px;top:0px;width:60px; height:64px; }
 #bow.state0 { background-position:0px -64px}
 #bow.state1 { background-position:0px 0px}
@@ -96,120 +97,131 @@ body {
 #hookshot.state0 { background-position:-120px -64px }
 #hookshot.state1 { background-position:-120px 0px }
 
-#bomb { left:184px; top:0px; width: 68px; height:64px; }
-#bomb.state0 {  background-position:-184px -64px }
-#bomb.state1 { background-position:-184px 0px }
-
-#mushroom {left:184px; top:0px; width:68px; height:64px; display:none;}
+#mushroom {left:184px; top:0px; width:68px; height:64px; }
 #mushroom.state0 {background-position:-196px -640px}
 #mushroom.state1 {background-position:-128px -640px }
+#mushroomCheckmark { left:220px; top:0px; width:32px; height:32px; }
+#mushroomCheckmark.state0 { background-position: -300px -676px; }
+#mushroomCheckmark.state1 { background-position: -264px -676px; }
 
-#powder {left:252px; top:0px; width:68px; height:64px; display:none;}
+#powder {left:252px; top:0px; width:68px; height:64px; }
 #powder.state0 {background-position:-252px -64px}
 #powder.state1 {background-position:-252px 0px }
 
-#mushroompowder {left:252px; top:0px; width:68px; height:64px; }
-#mushroompowder.state0 {background-position:-448px -0px}
-#mushroompowder.state1 {background-position:-448px -64px }
-#mushroompowder.state2 {background-position:-448px -128px }
-#mushroompowder.state3 {background-position:-448px -192px }
-
-
+/* Items: row 2 */
 #firerod { left:0px; top:64px; width:60px; height:64px; }
 #firerod.state0 { background-position:0px -192px }
 #firerod.state1 { background-position:0px -128px }
+
 #icerod { left:60px; top:64px; width:56px; height:64px; }
 #icerod.state0 { background-position:-60px -192px }
 #icerod.state1 { background-position:-60px -128px }
+
 #bombos { left:116px; top:64px; width:68px; height:64px;}
 #bombos.state0 { background-position:-116px -192px }
 #bombos.state1 { background-position:-116px -128px }
+
 #ether { left:184px; top:64px; width:68px; height:64px; }
 #ether.state0 { background-position:-184px -192px }
 #ether.state1 { background-position:-184px -128px }
+
 #quake { left:252px; top:64px; width:68px; height:64px; }
 #quake.state0 { background-position:-252px -192px }
 #quake.state1 { background-position:-252px -128px }
 
+/* Items: row 3 */
 #lamp {left:0px; top:128px; width:60px; height:64px;}
 #lamp.state0 {background-position:0px -320px}
 #lamp.state1 {background-position:0px -256px}
+
 #hammer {left:60px; top:128px; width:60px; height:64px; }
 #hammer.state0 {background-position:-60px -320px}
 #hammer.state1 {background-position:-60px -256px}
-#flute {left:124px; top:128px; width:64px; height:64px; display:none;}
+
+#flute {left:124px; top:128px; width:64px; height:64px; }
 #flute.state0 {background-position:-120px -320px}
 #flute.state1 {background-position:-120px -256px}
-#shovel {left:188px; top:128px; width:64px; height:64px; display:none;}
+
+#shovel {left:188px; top:128px; width:64px; height:64px; }
 #shovel.state0 {background-position:-64px -640px}
 #shovel.state1 {background-position:0px -640px }
-#shovelflute {left:120px; top:128px; width:64px; height:64px;}
-#shovelflute.state0 {background-position:-448px -256px}
-#shovelflute.state1 {background-position:-448px -320px }
-#shovelflute.state2 {background-position:-448px -384px }
-#shovelflute.state3 {background-position:-448px -448px }
-#net {left:184px; top:128px; width:68px; height:64px;}
-#net.state0 {background-position:-184px -320px}
-#net.state1 {background-position:-184px -256px}
+
 #book {left:252px; top:128px; width:68px; height:64px;}
 #book.state0 {background-position:-252px -320px}
 #book.state1 {background-position:-252px -256px}
 
-#bottle {left:0px; top:192px; width:60px; height:64px; }
-#bottle.state0 { background-position:0px -512px}
-#bottle.state1 { background-position:0px -576px  }
+/* Items: row 4 */
+#bottle { left:0px; top:192px; width:60px; height:64px; }
+#bottle.state0 { background-position:0px -512px }
+#bottle.state1 { background-position:0px -576px }
 #bottle.state2 { background-position:-60px -576px }
 #bottle.state3 { background-position:-120px -576px }
 #bottle.state4 { background-position:-180px -576px }
+#bottleCheckmark { left:28px; top:192px; width:32px; height:32px; }
+#bottleCheckmark.state0 { background-position: -300px -676px; }
+#bottleCheckmark.state1 { background-position: -264px -676px; }
+
 #somaria { left:60px; top:192px; width:60px; height:64px; }
 #somaria.state0 { background-position:-60px -448px}
 #somaria.state1 { background-position:-60px -384px}
+
 #byrna { left:120px; top:192px; width:64px; height:64px; }
 #byrna.state0 { background-position:-120px -448px}
 #byrna.state1 { background-position:-120px -384px}
+
 #cape { left:184px; top:192px; width:68px; height:64px; }
 #cape.state0 { background-position:-184px -448px}
 #cape.state1 { background-position:-184px -384px}
+
 #mirror { left:252px; top:192px; width:68px; height:64px; }
 #mirror.state0 { background-position:-252px -448px}
 #mirror.state1 { background-position:-252px -384px}
 
+.showCheckmark { display: inline }
+.hideCheckmark { display: none }
+
+/* Gear: row 1 */
 #sword { left:0px; top:0px; width:64px; height:64px; }
 #sword.state0 { background-position:-120px -512px }
 #sword.state1 { background-position:-184px -512px }
 #sword.state2 { background-position:-248px -512px }
 #sword.state3 { background-position:-312px -512px }
 #sword.state4 { background-position:-376px -512px }
+
 #shield { left:64px; top:0px; width:64px; height:64px; }
 #shield.state0 { background-position:-320px -64px}
 #shield.state1 { background-position:-320px 0px}
 #shield.state2 { background-position:-320px -128px}
 #shield.state3 { background-position:-320px -192px }
 
-#mail { opacity:1; left:0px; top:64px; width:64px; height:64px; }
-#mail.state0 { background-position:-240px -576px}
-#mail.state1 { background-position:-304px -576px }
-#mail.state2 { background-position:-368px -576px }
-#pearl { left:64px; top:64px; width:64px; height:64px; }
+/* Gear: row 2 */
+#pearl { left:0px; top:64px; width:64px; height:64px; }
 #pearl.state0 { background-position:-384px -64px}
 #pearl.state1 { background-position:-384px 0px}
 
+#net { left:62px; top:64px; width:68px; height:64px; }
+#net.state0 {background-position:-184px -320px}
+#net.state1 {background-position:-184px -256px}
+
+/* Gear: row 3 */
 #boots { left:0px; top:128px; width:64px; height:64px; }
 #boots.state0 { background-position:-320px -320px}
 #boots.state1 { background-position:-320px -256px}
+
 #glove { left:64px; top:128px; width:64px; height:64px;}
 #glove.state0 { background-position:-384px -128px}
 #glove.state1 { background-position:-384px -192px}
 #glove.state2 { background-position:-384px -256px}
 
+/* Gear: row 4 */
 #flippers { left:0px; top:196px; width:64px; height:64px; }
 #flippers.state0 { background-position:-320px -448px }
 #flippers.state1 { background-position:-320px -384px }
+
 #halfmagic { left:64px; top:196px; width:64px; height:64px; }
 #halfmagic.state0 { background-position:-384px -320px  }
 #halfmagic.state1 { background-position:-384px -384px  }
 #halfmagic.state2 { background-position:-384px -448px  }
-
 
 
 #boss0 { width:72px; height:72px;}
@@ -594,7 +606,7 @@ input {cursor:pointer;}
 
 
 
-#timer {    
+#timer {
   left:8px;
   top:8px;
   border-image: url(images/borderB.png) 20 round;

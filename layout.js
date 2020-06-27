@@ -1,3 +1,4 @@
+// Opens the tracker in a new browser window
 function popout() {
 
   console.log($("#totalCover").width());
@@ -14,9 +15,12 @@ function popout() {
 
 }
 
+// Container object for the settings panel
 settings = {
   open: false,
-  toggle: function () {//function that opens and closes the settings box
+
+  // function that opens and closes the settings box
+  toggle: function () {
     settings.open = !settings.open;
 
     if (settings.open) {
@@ -27,11 +31,13 @@ settings = {
       TweenMax.to("#settingsTab", 0.5, { backgroundColor: "rgba(17,17,17,0)", ease: Power4.easeOut });
     }
   },
+
   getCookie: function (name) {
     var value = "; " + document.cookie;
     var parts = value.split("; " + name + "=");
     if (parts.length === 2) { return parts.pop().split(";").shift(); }
   },
+
   applyCookie: function () {
     //reads the user's cookie and returns it as a settings object
     savedSettings = (typeof (settings.getCookie('settings')) !== 'undefined') ? JSON.parse(settings.getCookie('settings')) : {};
@@ -43,28 +49,19 @@ settings = {
 
     settings.apply(true);
   },
-  apply: function (reset) {
 
+  apply: function (reset) {
     settings.keyMode = $("input[name='keyMode']:checked").val();
     settings.layout = $("input[name='layout']:checked").val();
     settings.border = $("input[name='border']:checked").val();
     settings.iconSet = $("input[name='iconSet']:checked").val();
     settings.mapAlign = $("input[name='mapAlign']:checked").val();
-    settings.combineFetch = $("input[name='combineFetch']:checked").val();
     settings.dungeonDisp = $("input[name='dungeonDisp']:checked").val();
     settings.openMode = $("input[name='openMode']:checked").val();
     settings.timerMode = $("input[name='timerMode']:checked").val();
     settings.predictor = $("input[name='predictor']:checked").val();
 
     document.cookie = "settings=" + JSON.stringify(settings) + "; expires=Sat, 26 Dec 2025 12:00:00 UTC; path=/";
-
-    if (settings.combineFetch == 1) {
-      $('.showCombined').css({ 'display': 'none' });
-      $('.hideCombined').css({ 'display': 'inline' });
-    } else {
-      $('.showCombined').css({ 'display': 'inline' });
-      $('.hideCombined').css({ 'display': 'none' });
-    }
 
     if (settings.dungeonDisp == 1) {
       $('.dispHeads').css({ 'display': 'none' });
@@ -74,12 +71,8 @@ settings = {
       $('.dispPrizes').css({ 'display': 'none' });
     }
 
-
     //applies the chosen icon images
     $('.icon').css({ 'background-image': ("url('images/grid" + settings.iconSet + ".png')") });
-
-
-
 
     //goes through the layout object and applies the values for each element, according to the settings chosen
     $.each(layout.positions[settings.layout].all, function (k, v) {
@@ -92,9 +85,7 @@ settings = {
       if (settings.border == 0) { TweenMax.set(v.elem, v.borderless); }
     });
 
-
     //applies the chosen border settings to the tracker divs
-
     if (settings.border == 4) {
       $("#items").css({ 'border': '20px solid transparent', 'border-image': 'url(images/borderThinG.png) 20 round' });
       $("#gear").css({ 'border': '20px solid transparent', 'border-image': 'url(images/borderThinR.png) 20 round' });
@@ -135,8 +126,6 @@ settings = {
 
     TweenMax.set("#trackerBox", { 'display': 'inline' });
 
-
-
     if (settings.timerMode == 1) {
       TweenMax.set("#timer", { display: 'inline' });
       TweenMax.set("#items,#gear,#dungeons", { y: "+=132" });
@@ -154,35 +143,15 @@ settings = {
       dungeons[id].openChests = Math.min(dungeons[id].openChests, dungeons[id]["chests" + settings.keyMode]);
     });
 
-
+    // Refresh the map after changing a setting
     logic.apply();
   }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 layout = {
-  positions: {	//a big object that transforms the layout based on the different options the user can select
+  // a big object that transforms the layout based on the different options the user can select
+  positions: {
     0: { //Square-ish Layout. Relatively Compact. Default
       all: [
         { elem: ".icon,.tracker", props: { x: 0, y: 0 } }, //resets all icons
@@ -336,12 +305,12 @@ layout = {
         { elem: "#gear", props: { x: -376, y: 316, width: 372, height: 192 }, borderless: { y: "-=56", x: "-=12" } },
         { elem: "#boots,#glove,#flippers,#halfmagic", props: { y: -128, x: 128 } },
         { elem: "#gear .icon", props: { y: "+=4" } },
-        { elem: "#sword,#mail", props: { x: "+=8" } },
-        { elem: "#shield,#pearl", props: { x: "+=24" } },
+        { elem: "#sword,#pearl", props: { x: "+=8" } },
+        { elem: "#shield,#net", props: { x: "+=24" } },
         { elem: "#boots,#flippers", props: { x: "+=40" } },
         { elem: "#glove,#halfmagic", props: { x: "+=56" } },
         { elem: "#boots", props: { y: "-=4" } },
-        { elem: "#pearl", props: { y: "+=4" } },
+        { elem: "#pearl,#net", props: { y: "+=4" } },
         { elem: ".keyShop", props: { display: 'none' } },
         { elem: ".takeAny", props: { display: 'none' } },
         { elem: "#dungeonChest11,.key,.bigKey", props: { display: 'none' } },
@@ -492,10 +461,10 @@ layout = {
         { elem: ".trackerTitle", props: { display: 'none' } },
         { elem: "#bow,#firerod,#lamp,#bottle", props: { x: 0 } },
         { elem: "#boomerang,#icerod,#hammer,#somaria", props: { x: 4 } },
-        { elem: "#hookshot,#bombos,#shovelflute,#flute,#byrna", props: { x: 8 } },
-        { elem: "#bomb,#mushroom,#ether,#net,#shovel,#cape", props: { x: 12 } },
-        { elem: "#mushroompowder,#powder,#quake,#book,#mirror", props: { x: 16 } },
-        { elem: "#sword,#mail,#boots,#flippers", props: { x: 20 } },
+        { elem: "#hookshot,#bombos,#flute,#byrna", props: { x: 8 } },
+        { elem: "#mushroom,#mushroomCheckmark,#ether,#shovel,#cape", props: { x: 12 } },
+        { elem: "#powder,#quake,#book,#mirror", props: { x: 16 } },
+        { elem: "#sword,#net,#boots,#flippers", props: { x: 20 } },
         { elem: "#shield,#pearl,#glove,#halfmagic", props: { x: 24 } },
         { elem: "#timer", props: { width: 604, height: 128 } },
         { elem: "#timerWrap", props: { x: 0, y: 0, width: 604, "margin-left": 26, scaleX: 1, scaleY: 1 } },

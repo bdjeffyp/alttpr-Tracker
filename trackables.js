@@ -3,10 +3,9 @@ items = {
   bow: { val: 0, max: 3 },
   boomerang: { val: 0, max: 3 },
   hookshot: { val: 0, max: 1 },
-  bomb: { val: 1, max: 1 },		//this is the only item checked off by default
   mushroom: { val: 0, max: 1 },
+  mushroomCheckmark: { val: 0, max: 1 },
   powder: { val: 0, max: 1 },
-  mushroompowder: { val: 0, max: 3 },
   firerod: { val: 0, max: 1 },
   icerod: { val: 0, max: 1 },
   bombos: { val: 0, max: 1 },
@@ -16,10 +15,10 @@ items = {
   hammer: { val: 0, max: 1 },
   shovel: { val: 0, max: 1 },
   flute: { val: 0, max: 1 },
-  shovelflute: { val: 0, max: 3 },
   net: { val: 0, max: 1 },
   book: { val: 0, max: 1 },
   bottle: { val: 0, max: 4 },
+  bottleCheckmark: { val: 0, max: 1 },
   somaria: { val: 0, max: 1 },
   byrna: { val: 0, max: 1 },
   cape: { val: 0, max: 1 },
@@ -373,6 +372,18 @@ toggle = {
       items[icon.id].val = (curVal == 0) ? items[icon.id].max : (curVal - 1);
     }
 
+    // If this is a mushroom or bottle, toggle the checkmark visibility
+    if (icon.id.indexOf("mushroom") >= 0 || icon.id.indexOf("bottle") >= 0) {
+      // Show the checkmark if mushroom is on
+      if (items[icon.id].val > 0) {
+        $("#" + icon.id + "Checkmark")
+          .attr('class', function (i, c) { return c.replace("hideCheckmark", "showCheckmark"); });
+      } else {
+        $("#" + icon.id + "Checkmark")
+          .attr('class', function (i, c) { return c.replace("showCheckmark", "hideCheckmark"); });
+      }
+    }
+
     if (icon.id.indexOf("boss") >= 0) {								//if it's a boss, do the boss toggle stuff
       num = icon.id.replace(/\D/g, '');
       dungeons[num].completed = !dungeons[num].completed;
@@ -386,24 +397,6 @@ toggle = {
         .attr('class', function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); })
         .addClass("state" + dungeons[num].prize);
       ;
-    }
-
-    if (icon.id == "mushroompowder" || icon.id == "shovelflute") {		//this ensures that the separated mushroom/powder and shovel/flute icons always match the combined versions of those icons
-      items.powder.val = (items.mushroompowder.val >= 2) ? 1 : 0;
-      items.mushroom.val = (items.mushroompowder.val % 2 == 1) ? 1 : 0;
-      items.flute.val = (items.shovelflute.val >= 2) ? 1 : 0;
-      items.shovel.val = (items.shovelflute.val % 2 == 1) ? 1 : 0;
-      $('#mushroom').attr('class', function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); }).addClass("state" + items.mushroom.val);
-      $('#powder').attr('class', function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); }).addClass("state" + items.powder.val);
-      $('#shovel').attr('class', function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); }).addClass("state" + items.shovel.val);
-      $('#flute').attr('class', function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); }).addClass("state" + items.flute.val);
-    }
-
-    if (icon.id == "mushroom" || icon.id == "powder" || icon.id == "flute" || icon.id == "shovel") { //and vice versa, this ensures that the combined mushroom/powder and shovel/flute icons always match the separated versions of those icons
-      items.mushroompowder.val = (items.mushroom.val ? 1 : 0) + (items.powder.val ? 2 : 0);
-      items.shovelflute.val = (items.shovel.val ? 1 : 0) + (items.flute.val ? 2 : 0);
-      $('#mushroompowder').attr('class', function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); }).addClass("state" + items.mushroompowder.val);
-      $('#shovelflute').attr('class', function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); }).addClass("state" + items.shovelflute.val);
     }
 
     $("#" + icon.id)																	//removes the previous class from the icon and adds the proper new class
