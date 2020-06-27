@@ -1,83 +1,83 @@
 div {
-    box-sizing:border-box;
-	-webkit-user-select: none;  /* Chrome all / Safari all */
-	-moz-user-select: none;     /* Firefox all */
-	-ms-user-select: none;      /* IE 10+ */
+  box-sizing:border-box;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
 }
 
 body {
-    background-color:#000;
-    font-family:Oswald;
-    color:#fff;
-    overflow:hidden;
+  background-color:#000;
+  font-family:Oswald;
+  color:#fff;
+  overflow:hidden;
 }
 
 #totalCover {
-    display:none;
-    position:absolute;
-    left:0px;
-    top:0px;
-    background-color:#a00;
-    opacity:0.3;
-    margin:0;
+  display:none;
+  position:absolute;
+  left:0px;
+  top:0px;
+  background-color:#a00;
+  opacity:0.3;
+  margin:0;
 }
 
 #trackerBox {
-    position:absolute;
-    left:0px;
-    top:0px;
-    display:none;
+  position:absolute;
+  left:0px;
+  top:0px;
+  display:none;
 }
 
 .tracker {
-    position:absolute;
-    border: solid 20px transparent;
+  position:absolute;
+  border: solid 20px transparent;
 }
 
 .trackerTitle {
-	position:absolute;
-	left:12px;
-	top:-16px;
-	width:136px;
-	height:20px;
-	background-image:url('images/title2.png');
-	background-repeat:no-repeat;
+  position:absolute;
+  left:12px;
+  top:-16px;
+  width:136px;
+  height:20px;
+  background-image:url('images/title2.png');
+  background-repeat:no-repeat;
 }
 
 #items {
-    left:8px;
-    top:8px;
-    border-image: url(images/borderG.png) 20 round;
-    width:372px;
-    height:312px;
+  left:8px;
+  top:8px;
+  border-image: url(images/borderG.png) 20 round;
+  width:372px;
+  height:312px;
 }
 #items .trackerTitle{ background-position:0px 0px}
 
 #gear {
-    left:384px;
-    top:8px;
-    border-image: url(images/borderR.png) 20 round;
-    width:176px;
-    height:312px;
+  left:384px;
+  top:8px;
+  border-image: url(images/borderR.png) 20 round;
+  width:176px;
+  height:312px;
 }
 #gear .trackerTitle{ background-position:0px -20px}
 
 #dungeons {
-    left:8px;
-    top:324px;
-    border-image: url(images/borderY.png) 20 round;
-    width:552px;
-    height:208px;
+  left:8px;
+  top:324px;
+  border-image: url(images/borderY.png) 20 round;
+  width:552px;
+  height:208px;
 }
 #dungeons .trackerTitle{ background-position:0px -40px}
 
 .icon {
-    position:absolute;
-    left:0px;
-    top:0px;
-    background-image:url(images/grid1.png);
-    cursor:pointer;
-    margin:8px 8px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  background-image:url(images/grid1.png);
+  cursor:pointer;
+  margin:8px 8px;
 }
 
 #bow {left:0px;top:0px;width:60px; height:64px; }
@@ -350,86 +350,85 @@ body {
 #bigKey0 { left:18px }
 
 #mapBox {
-    position:absolute;
-    right:0px;
-    bottom:0px;
+  position:absolute;
+  right:0px;
+  bottom:0px;
 }
 
 .map {
-    position:absolute;
-    background-image:url(images/map.png);
-    background-size: 650px 1300px;
-    width:650px;
-    height:650px;
-	background-color:rgba(0, 0, 0, 0.1);
-	background-blend-mode:multiply;
+  position:absolute;
+  background-image:url(images/map.png);
+  background-size: 650px 1300px;
+  width:650px;
+  height:650px;
+  background-color:rgba(0, 0, 0, 0.1);
+  background-blend-mode:multiply;
 }
 
 #mapLW {background-position:0px    0px;}
 #mapDW {background-position:0px -650px;}
 
 .chest {
-	width: 32px;
-	height: 32px;
-	margin-left: -16px;
-	margin-top: -16px;
-	position: absolute;
-	background-size: 100% 100%;
-	cursor:pointer;
-	border-radius:50%;
-    border: solid 3px #000;
-    background-color:#7f7f7f;
+  width: 32px;
+  height: 32px;
+  margin-left: -16px;
+  margin-top: -16px;
+  position: absolute;
+  background-size: 100% 100%;
+  cursor:pointer;
+  border-radius:50%;
+  border: solid 3px #000;
+  background-color:#7f7f7f;
 
-    color:#000;
- 	text-align:center;	
-	font-family:Oswald,Sans-Serif;
-	font-weight: 600;
-	font-size:19px;
-	padding:1px 0px 0px 0px;
-    line-height:23px;
+  color:#000;
+  text-align:center;
+  font-family:Oswald,Sans-Serif;
+  font-weight: 600;
+  font-size:19px;
+  padding:1px 0px 0px 0px;
+  line-height:23px;
 }
 
 .chest:hover {
-    border-color:#fff;
+  border-color:#fff;
 }
 
 .dungeonChest {
-    margin-left:4px;
-	margin-top:4px;
-	
+  margin-left:4px;
+  margin-top:4px;
 }
 
 .chestPip {
-	position:absolute;
-	width:8px;
-	height: 8px;
-	margin-left:16px;
-	margin-top:16px;
-	border-radius:4px;
-	border: solid 1px #000;
-	z-index:100;
+  position:absolute;
+  width:8px;
+  height: 8px;
+  margin-left:16px;
+  margin-top:16px;
+  border-radius:4px;
+  border: solid 1px #000;
+  z-index:100;
 }
 
 .dungeon {
-	width: 48px;
-	height: 48px;
-	margin-left: -24px;
-	margin-top: -24px;
-	position: absolute;
-	background-repeat: no-repeat;
-	z-index: 2;
-	cursor:pointer;
-	border: solid 3px #000;
-	border-radius:50%;
-    background-color:#7f7f7f;
-    background-image:url(images/prizes1.png);
-    background-size:48px 240px;
-	background-position:-2px -2px;
-	color:#000;
-	text-align:center;
-	font-weight:800;
-	font-size:20px;
-	line-height:41px;
+  width: 48px;
+  height: 48px;
+  margin-left: -24px;
+  margin-top: -24px;
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 2;
+  cursor:pointer;
+  border: solid 3px #000;
+  border-radius:50%;
+  background-color:#7f7f7f;
+  background-image:url(images/prizes1.png);
+  background-size:48px 240px;
+  background-position:-2px -2px;
+  color:#000;
+  text-align:center;
+  font-weight:800;
+  font-size:20px;
+  line-height:41px;
 }
 
 .dungeon.state0 { background-position:-2px -2px; }
@@ -439,32 +438,32 @@ body {
 .dungeon.state4 { background-position:-2px -194px; }
 
 .dungeon:hover {
-    border-color:#fff;
+  border-color:#fff;
 }
 
 .takeAny {
-	width: 16px;
-	height: 16px;
-	margin-left: -8px;
-	margin-top: -8px;
-	position: absolute;
-	background-size: 100% 100%;
-	cursor:pointer;
-	border-radius:50%;
-    border: solid 2px #000;
-    background-color:#7f7f7f;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  position: absolute;
+  background-size: 100% 100%;
+  cursor:pointer;
+  border-radius:50%;
+  border: solid 2px #000;
+  background-color:#7f7f7f;
 
-    color:#000;
- 	text-align:center;	
-	font-family:Oswald,Sans-Serif;
-	font-weight: 600;
-	font-size:19px;
-	padding:1px 0px 0px 0px;
-    line-height:23px;
+  color:#000;
+  text-align:center;
+  font-family:Oswald,Sans-Serif;
+  font-weight: 600;
+  font-size:19px;
+  padding:1px 0px 0px 0px;
+  line-height:23px;
 }
 
 .takeAny:hover {
-    border-color:#fff;
+  border-color:#fff;
 }
 
 .unavail { background-color: #cb0b26; }
@@ -476,114 +475,114 @@ body {
 
 
 .keyShop {
-	position:absolute;
-	background-color:#222;
-	width:20px;
-	height:20px;
-	border:solid 1px #000;
-	border-radius:4px;
-	transform:scaleX(-1) rotate(135deg);
-	cursor:pointer;
-	color:#555;
-	line-height:11px;
-	font-size:10px;
-	text-align:center;
+  position:absolute;
+  background-color:#222;
+  width:20px;
+  height:20px;
+  border:solid 1px #000;
+  border-radius:4px;
+  transform:scaleX(-1) rotate(135deg);
+  cursor:pointer;
+  color:#555;
+  line-height:11px;
+  font-size:10px;
+  text-align:center;
 }
 
 .keyShop.unavail {
-	background-color: #cb0b26;
-	color:#cb0b26;
+  background-color: #cb0b26;
+  color:#cb0b26;
 }
 
 .keyShop.unavail .keyCirc {
-	background-color: #cb0b26;
-	border-color:#cb0b26;
+  background-color: #cb0b26;
+  border-color:#cb0b26;
 }
 
 .keyShop.dark {
-	background-color: #006999;
-	color:#1fa874;
+  background-color: #006999;
+  color:#1fa874;
 }
 
 .keyShop.dark .keyCirc {
-	background-color: #006999;
-	border-color:#1fa874;
+  background-color: #006999;
+  border-color:#1fa874;
 }
 
 .keyShop.active {
-	background-color: #775700;
-	color:#e0a800
+  background-color: #775700;
+  color:#e0a800
 }
 
 .keyCirc{
-	position:absolute;
-	left:6px;
-	bottom:2px;
-	width:6px;
-	height:6px;
-	background-color:#222;
-	border:solid 1px #555;
-	border-radius:100%
+  position:absolute;
+  left:6px;
+  bottom:2px;
+  width:6px;
+  height:6px;
+  background-color:#222;
+  border:solid 1px #555;
+  border-radius:100%
 }
 
 .keyShop.active .keyCirc {
-	background-color: #775700;
-	border-color:#e0a800
+  background-color: #775700;
+  border-color:#e0a800
 }
 
 .keyShop:hover {
-	border-color:#fff;
+  border-color:#fff;
 }
 
 input {cursor:pointer;}
 
 
 #settingsTab {
-	position:absolute;
-	bottom:-495px;
-	left:0px;
-	width:680px;
-	height:530px;
-	background-color:rgba(17,17,17,0);
-	border-radius:0px 10px 0px 0px;
-	color:#fff;
-	font-family:Oswald,sans-serif;
-	font-size:17px;
-	z-index:99998;
+  position:absolute;
+  bottom:-495px;
+  left:0px;
+  width:680px;
+  height:530px;
+  background-color:rgba(17,17,17,0);
+  border-radius:0px 10px 0px 0px;
+  color:#fff;
+  font-family:Oswald,sans-serif;
+  font-size:17px;
+  z-index:99998;
 }
 
 #tabIcon {
-	position:absolute;
-	left:5px;
-	top:0px;
-	color:#fff;
-	width:30px;
-	height: 30px;
-	text-align:center;
-	line-height:30px;
-	font-size:18px;
-	cursor:pointer;
-	Z-INDEX:99999;
-	background-color:#111;
-	border-radius:25%;
+  position:absolute;
+  left:5px;
+  top:0px;
+  color:#fff;
+  width:30px;
+  height: 30px;
+  text-align:center;
+  line-height:30px;
+  font-size:18px;
+  cursor:pointer;
+  Z-INDEX:99999;
+  background-color:#111;
+  border-radius:25%;
 }
 
 .selection {
-	position:absolute;
-	height: 30px;
-	line-height:20px;
-	text-align:left;
+  position:absolute;
+  height: 30px;
+  line-height:20px;
+  text-align:left;
 }
 
 #caption {
-	position:absolute;
-	left:80px;
-	top:4px;
-	width:500px;
-	color: #fff;
-	font-size: 17px;
-	text-align: left;
-	overflow:hidden;
+  position:absolute;
+  left:80px;
+  top:4px;
+  width:500px;
+  color: #fff;
+  font-size: 17px;
+  text-align: left;
+  overflow:hidden;
 }
 
 .captionState0 { color: #cb0b26; font-weight:700;}
@@ -596,103 +595,103 @@ input {cursor:pointer;}
 
 
 #timer {    
-	left:8px;
-    top:8px;
-    border-image: url(images/borderB.png) 20 round;
-    width:552px;
-	height:128px;
-	position: absolute;
-	font-size: 70px;
-	font-weight: 700;
-	text-align: center;
-	cursor:pointer;
-	/*font-family:'TW Cen MT Condensed'*/
+  left:8px;
+  top:8px;
+  border-image: url(images/borderB.png) 20 round;
+  width:552px;
+  height:128px;
+  position: absolute;
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+  cursor:pointer;
+  /*font-family:'TW Cen MT Condensed'*/
 }
 #timer .trackerTitle{ background-position:0px -60px}
 
 #timerWrap {
-	position:absolute;
-	width:100%;
-	height:128px;
-	left:72px;
-	top:-6px;
-	overflow:hidden;
-	transform-origin:180px 48px;
+  position:absolute;
+  width:100%;
+  height:128px;
+  left:72px;
+  top:-6px;
+  overflow:hidden;
+  transform-origin:180px 48px;
 }
 
 .timerDigit {
-	position: absolute;
-	top: 0px;
-	width: 60px;
-	height: 100px;
-	line-height: 100px;
-	overflow: hidden;
-	text-align:center;
-	transform:translateX(-86.5px);
+  position: absolute;
+  top: 0px;
+  width: 60px;
+  height: 100px;
+  line-height: 100px;
+  overflow: hidden;
+  text-align:center;
+  transform:translateX(-86.5px);
 }
 
 .digits {
-	width:40px;
-	position: absolute;
-	left: 10px;
-	top:-5px;
-	text-align:center;
+  width:40px;
+  position: absolute;
+  left: 10px;
+  top:-5px;
+  text-align:center;
 }
 
 #digit7 {
-	left: 0px;
-	opacity:0;
+  left: 0px;
+  opacity:0;
 }
 
 #colon7 {
-	opacity:0;
+  opacity:0;
 }
 
 #digit6 {
-	left: 60px;
-	opacity:0;
+  left: 60px;
+  opacity:0;
 }
 
 #digit5 {
-	left: 100px;
-	opacity:0;
+  left: 100px;
+  opacity:0;
 }
 
 #colon5 {
-	opacity:0;
+  opacity:0;
 }
 
 #digit4 {
-	left: 160px;
-	opacity:0;
+  left: 160px;
+  opacity:0;
 }
 
 #digit3 {
-	left: 200px;
+  left: 200px;
 }
 
 #digit2 {
-	left: 260px;
-	font-size:50px;
+  left: 260px;
+  font-size:50px;
 }
 
 #digit1 {
-	left: 290px;
-	font-size:50px;
+  left: 290px;
+  font-size:50px;
 }
 
 #digit2 .digits, #digit1 .digits {
-	top:4px;
+  top:4px;
 }
 
 .colon {
-	position: absolute;
-	top:0px;
-	height: 96px;
-	width: 20px;
-	line-height: 96px;
-	font-size: 45px;
-	font-weight: 700;
-	text-align: center;
-	transform:translateY(8px) translateX(-86.5px);
+  position: absolute;
+  top:0px;
+  height: 96px;
+  width: 20px;
+  line-height: 96px;
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  transform:translateY(8px) translateX(-86.5px);
 }
