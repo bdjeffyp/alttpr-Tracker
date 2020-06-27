@@ -1,5 +1,5 @@
 # A Link to the Past Randomizer Tracker
-Found online at [https://bdjeffyp.github.io/alttpr-tracker](https://bdjeffyp.github.io/alttpr-tracker)
+Found online at [https://bdjeffyp.github.io/alttpr-Tracker](https://bdjeffyp.github.io/alttpr-Tracker)
 
 This tracker is forked off from ItsSupercar's tracker. I noticed that it didn't include locations for the Take Any caves on the map when Retro mode is enabled. My fork adds these locations as well as the logic for when they should be accessible.
 
