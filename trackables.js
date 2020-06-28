@@ -324,8 +324,22 @@ map = {
 
 
 toggle = {
-  chest: function (id) {							//toggles a chest's open status
-    chests[id].opened = !chests[id].opened;
+  // Toggle a chest's state
+  chest: function (id) {
+    newState = !chests[id].opened;
+    chests[id].opened = newState;
+    // If it is the potion shop or sick kid, toggle the checkmark state
+    if (id === 3) {
+      // Potion shop
+      $("#mushroomCheckmark")
+        .attr("class", function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); })
+        .addClass("state" + newState);
+    } else if (id === 15) {
+      // Sick kid
+      $("#bottleCheckmark")
+        .attr("class", function (i, c) { return c.replace(/(^|\s)state\S+/g, ''); })
+        .addClass("state" + newState);
+    }
     logic.apply();
   },
   boss: function (id) {							//toggles a dungeon's completion and marks its boss icon appropriately
@@ -374,7 +388,7 @@ toggle = {
 
     // If this is a mushroom or bottle, toggle the checkmark visibility
     if (icon.id.indexOf("mushroom") >= 0 || icon.id.indexOf("bottle") >= 0) {
-      // Show the checkmark if mushroom is on
+      // Show the checkmark if mushroom or bottle is on
       if (items[icon.id].val > 0) {
         $("#" + icon.id + "Checkmark")
           .attr('class', function (i, c) { return c.replace("hideCheckmark", "showCheckmark"); });
@@ -383,6 +397,8 @@ toggle = {
           .attr('class', function (i, c) { return c.replace("showCheckmark", "hideCheckmark"); });
       }
     }
+
+    // If this is the checkmark, toggle the state of the potion shop or sick kid
 
     if (icon.id.indexOf("boss") >= 0) {								//if it's a boss, do the boss toggle stuff
       num = icon.id.replace(/\D/g, '');
