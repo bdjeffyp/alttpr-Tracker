@@ -117,6 +117,8 @@ timerPos = 0;
 function startTimer() {
     startTime = moment();
     timerUpdate = setInterval(function () { checkTime(); }, 10);
+    // Show the reset button
+    $(".timerReset").css({ 'display': 'inline' });
 }
 
 function pauseTimer() {
@@ -134,6 +136,8 @@ function resetTimer() {
     digits = { 7: 0, 6: 0, 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
     TweenMax.to(".digits", speed, { y: 0, ease: Back.easeInOut.config(1.4) });
     fadeDigits();
+    // Hide the reset button
+    $(".timerReset").css({ 'display': 'none' });
 }
 
 running = false;

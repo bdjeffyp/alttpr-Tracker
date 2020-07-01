@@ -276,9 +276,9 @@ body {
 #prize9 { left:36px; top:0px; }
 #medal9 { left:36px; top:36px; }
 
-#boss10 { width:72px; height:72px;}
-#boss10.state0 { background-position:-268px -776px}
-#boss10.state1 { background-position:-268px -704px}
+#boss10 { width:72px; height:60px;}
+#boss10.state0 { background-position:-268px -784px}
+#boss10.state1 { background-position:-268px -712px}
 
 #boss11 { width:64px; height:72px; left:4px;}
 #boss11.state0 { background-position:-204px -776px}
@@ -604,8 +604,6 @@ input {cursor:pointer;}
 .captionState4 { color: #e26d00; font-weight:700;}
 
 
-
-
 #timer {
   left:8px;
   top:8px;
@@ -620,6 +618,12 @@ input {cursor:pointer;}
   /*font-family:'TW Cen MT Condensed'*/
 }
 #timer .trackerTitle{ background-position:0px -60px}
+
+.timerReset {
+  color: white;
+  cursor: pointer;
+  display: none;
+}
 
 #timerWrap {
   position:absolute;
